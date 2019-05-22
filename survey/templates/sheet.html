@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Informal Form</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/form" method="post" class="needs-validation" novalidate>
+
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Email</th>
+                <th scope="col">Password</th>
+                <th scope="col">Address</th>
+                <th scope="col">Address 2</th>
+                <th scope="col">City</th>
+                <th scope="col">State</th>
+                <th scope="col">ZIP</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Pet</th>
+            </tr>
+        </thead>
+        <tbody>
+             <!-- data assigned names to the input tag and the select tag. -->
+            {% for datas in data %}
+            <tr>
+                <td>{{ datas["email"] }}</td>
+                <td>{{ datas["password"] }}</td>
+                <td>{{ datas["address"] }}</td>
+                <td>{{ datas["address2"] }}</td>
+                <td>{{ datas["city"] }}</td>
+                <td>{{ datas["state"] }}</td>
+                <td>{{ datas["zip"] }}</td>
+                <td>{{ datas["gender"] }}</td>
+                <td>{{ datas["pet"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
